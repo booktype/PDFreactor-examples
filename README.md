@@ -10,28 +10,14 @@ the proprietary PDFreactor solution.
 
 (Other proprietary export renderers can be added, like PrinceXML. We decided to
 go with PDFreactor, because their support of baseline-grid is making it that bit
-more attractive. The open source version vivliostyle is impressive, but does not 
-support hyphenation... yet. For details, see the great site `www.print-css.rocks`.)
+more attractive. The open source version of vivliostyle is impressive, but does not 
+support hyphenation... yet. For details, see the great site http://www.print-css.rocks/ ).
 
 If you have PrinceXML installed, you can also create PDFs from the HTML/CSS files
 to get an impression of what they will come out like. In your terminal, move to the
-folder with the HTML/CSS file and type (.e.g.):
+folder with the HTML/CSS file and type (e.g.):
 
 `prince -s pdfreactor-style.css pdfreactor-body.html -o princexml.pdf`
-
-This will create a PDF by the name of pdfreactor-body.pdf
-
-## Running PDFreactor from the command line
-
-Yuo can create PDF files using the command line as well. After downloading the 
-Tarball from `http://www.pdfreactor.com/download/` and extracting it (anywhere)
-on your system, you can use the following command to create a PDF:
-
-`cd /path/to/pdfreactor/html/file/; /path/to/pdfreactor/bin/pdfreactor.py -i body-pdfreactor.html -o pdfreactor.pdf`
-
-Important: the CSS file needs to be in the same folder AND the css file needs to be linked in the
-header of the HTML file. Inside the CSS file, you need to link to the font files 
-as a relative path.
 
 ## Structure
 
@@ -60,11 +46,26 @@ They are optional - including the fonts and page size:
 * `samples/BT_theme_academic/_PDFRfonts.css`
 * `samples/BT_theme_academic/_PDFRpagesize.css`
 
-## Install
+## Install and run the PDFreactor web service
 
-* You need to have PDFreactor Web Service installed. See www.pdfreactor.com
-* Open `pdfreactorwebservice-start.sh` and change the path to match your dir structure
-* Start the PDFreactor Web Service by typing `./pdfreactorwebservice-start.sh`
-* Open the file `index.php` and change the relative paths to match the HTML and CSS file you want to use for PDF rendering.
-* Make sure this repo is available through your browser on localhost.
-* Open the URL in a browser (e.g. `http://localhost/pdfreactorexamples/`).
+The PDFreactor web service is required to be running even when using PDFreactor on the command line.
+
+* Download the PDFreactor archive from http://www.pdfreactor.com/download/ and extract it on the local system. The directory `PDFreactor` should be created.
+* Change to the `PDFreactor/bin/` directory
+* Run `pdfreactorwebservice start`
+* Check if the web service is running with `pdfreactorwebservice status`
+
+## Running PDFreactor from the command line
+
+The syntax to create PDF files using the command line is:
+
+`pdfreactor.py -i input.html -o output.pdf`
+
+Important: the CSS file needs to be in the same directory and the CSS file needs to be linked in the
+header of the HTML file. Inside the CSS file, you need to link to the font files as a relative path.
+
+## PHP wrapper script
+
+* Open the file `index.php` from this repository and change the relative paths to match the HTML and CSS file you want to use for PDF rendering.
+* Make sure this repo is available through your browser on localhost, e.g. with Apache.
+* Open the URL in a browser (e.g. `http://localhost/pdfreactor-examples/`).
