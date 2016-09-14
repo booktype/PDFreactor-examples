@@ -52,14 +52,14 @@ The PDFreactor web service is required to be running even when using PDFreactor 
 
 * Download the PDFreactor archive from http://www.pdfreactor.com/download/ and extract it on the local system. The directory `PDFreactor` should be created.
 * Change to the `PDFreactor/bin/` directory
-* Run `pdfreactorwebservice start`
-* Check if the web service is running with `pdfreactorwebservice status`
+* Run `./pdfreactorwebservice start`
+* Check if the web service is running with `./pdfreactorwebservice status`
 
 ## Running PDFreactor from the command line
 
 The syntax to create PDF files using the command line is:
 
-`pdfreactor.py -i input.html -o output.pdf`
+`./pdfreactor.py -i input.html -o output.pdf`
 
 Important: the CSS file needs to be in the same directory and the CSS file needs to be linked in the
 header of the HTML file. Inside the CSS file, you need to link to the font files as a relative path.
