@@ -65,6 +65,10 @@ The syntax to create PDF files using the command line is:
 Important: the CSS file needs to be in the same directory and the CSS file needs to be linked in the
 header of the HTML file. Inside the CSS file, you need to link to the font files as a relative path.
 
+If you wish to use JavaScript linked from your source HTML, such as `awesomizr.js` for Table of Contents generation, this mode is disabled by default. You can enable it with:
+
+`./pdfreactor.py --javaScriptMode ENABLED -i input.html -o output.pdf`
+
 ## PHP wrapper script
 
 * Open the file `index.php` from this repository and change the relative paths to match the HTML and CSS file you want to use for PDF rendering.
