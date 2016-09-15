@@ -54,6 +54,7 @@ The PDFreactor web service is required to be running even when using PDFreactor 
 * Change to the `PDFreactor/bin/` directory
 * Run `./pdfreactorwebservice start`
 * Check if the web service is running with `./pdfreactorwebservice status`
+* The web service will start accepting requests a few seconds later. Until then, you may see: `<urlopen error [Errno 111] Connection refused>` when attempting to use it.
 
 ## Running PDFreactor from the command line
 
